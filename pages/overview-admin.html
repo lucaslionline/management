@@ -1,0 +1,19 @@
+---
+layout: default
+title: "Overview"
+---
+
+
+<p class="alert alert-info" role="alert">Hello, <strong>Manager</strong>!</p>
+
+<div class="row">
+	{% for item in site.data.data.teams %}
+	<div class="col-sm-2 placeholder2">
+		<img src="{{ site.baseurl }}/assets/img/{{ item.num }}-{{ item.abr }}.png" class="img-responsive" alt="">
+		<h4>{{ item.num }}</h4>
+		<p>{{ item.name }}</p>
+	</div>
+	{% endfor %}
+</div>
+
+

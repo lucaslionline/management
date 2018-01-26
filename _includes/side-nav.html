@@ -1,0 +1,32 @@
+<div class="col-sm-3 col-md-2 sidebar">
+	<ul class="nav nav-sidebar">
+		<li class="sidebar-label">Dashboard</li>
+		<li class="{% if page.url contains 'overview' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/overview.html">Overview</a></li>
+		<li class="{% if page.url contains 'standing' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/standing.html">Standing</a></li>
+		<li class="{% if page.url contains 'analysis' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/analysis.html">Analysis</a></li>
+		<li class="{% if page.url contains 'announcements' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/announcements.html">Announcements</a></li>
+		<li class="{% if page.url contains 'documents' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/documents.html">Documents</a></li>
+		<li class="{% if page.url contains 'deliverables' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/deliverables.html">Deliverables</a></li>
+	</ul>
+
+
+	<ul class="nav nav-sidebar">
+		<li class="sidebar-label">Contests</li>
+		<li class="{% if page.url contains 'architecture' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/architecture.html">Architecture</a></li>
+		<li class="{% if page.url contains 'market-appeal' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/market-appeal.html">Market Appeal</a></li>
+		<li class="{% if page.url contains 'engineering' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/engineering.html">Engineering</a></li>
+		<li class="{% if page.url contains 'communications' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/communications.html">Communications</a></li>
+		<li class="{% if page.url contains 'innovation' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/innovation.html">Innovation</a></li>
+		<li class="{% if page.url contains 'comfort-zone' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/comfort-zone.html">Comfort Zone</a></li>
+		<li class="{% if page.url contains 'appliances' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/appliances.html">Appliances</a></li>
+		<li class="{% if page.url contains 'home-life' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/home-life.html">Home Life</a></li>
+		<li class="{% if page.url contains 'commuting' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/commuting.html">Commuting</a></li>
+		<li class="{% if page.url contains 'energy' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/energy.html">Energy</a></li>
+	</ul>
+	<ul class="nav nav-sidebar">
+		<li class="sidebar-label">More</li>
+		<li class="{% if page.url contains 'export' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/export.html">Export</a></li>
+		<li class="{% if page.url contains 'protest' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/protest.html">Protest</a></li>
+		<li class="{% if page.url contains 'faq' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/faq.html">FAQ</a></li>
+	</ul>
+</div>

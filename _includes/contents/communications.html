@@ -1,0 +1,52 @@
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="communications" style="width:100%; height:500px;"></div>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('communications'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'Communications Contest Scores',
+                left: 'center'
+            },
+            tooltip: {},
+            toolbox: {
+                show: true,
+                feature: {
+                    mark: {show: true},
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            legend: {
+                
+            },
+            yAxis: {
+                name: 'Team',
+                data: ['HKU','PKU*','THU','XJTU-WNEU','YI','WashU-BLD*','Istanbul', 'SUES-XD', 'Shunya', 'Montreal', 'JIA+', 'NJFJ', 'TUBSEU', 'XAUAT', 'SJTUIUC', 'BJTU', 'SIE', 'TJU-TUDA', 'Solar Offspring', 'SCUT-POLITO', 'UNNC Alpha', 'Israel']
+            },
+            xAxis: {
+                name: 'Points'
+            },
+            series: [{
+                name: 'Communications',
+                type: 'bar',
+                itemStyle: { 
+                    normal: {
+                        label: {
+                            show: true, 
+                            position: 'insideRight'
+                        }
+                    }
+                },
+                data: [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        </script>

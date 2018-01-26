@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+
+	<title>SDC 2018 | Analysis</title>
+	
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
+	<script src="/assets/js/jquery-1.11.3.js"></script>
+	<script src="/assets/js/bootstrap.js"></script>
+	<script src="/assets/js/echarts.js"></script>
+	<script src="/assets/js/dataTool.js"></script>
+</head>
+
+</head>
+
+<body>
+	<header>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<img class="navbar-brand" src="/assets/img/sdc_logo_landscape.png">
+				<a class="navbar-brand" href="/">Solar Decathlon China</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Team TJU-TUDA <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="/pages/profile.html">Profile</a></li><li><a href="/">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+				<form class="navbar-form navbar-right">
+					<input type="text" class="form-control" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+	<ul class="nav nav-sidebar">
+		<li class="sidebar-label">Dashboard</li>
+		<li class=""><a href="/pages/overview.html">Overview</a></li>
+		<li class=""><a href="/pages/standing.html">Standing</a></li>
+		<li class="active"><a href="/pages/analysis.html">Analysis</a></li>
+		<li class=""><a href="/pages/announcements.html">Announcements</a></li>
+		<li class=""><a href="/pages/documents.html">Documents</a></li>
+		<li class=""><a href="/pages/deliverables.html">Deliverables</a></li>
+	</ul>
+
+
+	<ul class="nav nav-sidebar">
+		<li class="sidebar-label">Contests</li>
+		<li class=""><a href="/pages/architecture.html">Architecture</a></li>
+		<li class=""><a href="/pages/market-appeal.html">Market Appeal</a></li>
+		<li class=""><a href="/pages/engineering.html">Engineering</a></li>
+		<li class=""><a href="/pages/communications.html">Communications</a></li>
+		<li class=""><a href="/pages/innovation.html">Innovation</a></li>
+		<li class=""><a href="/pages/comfort-zone.html">Comfort Zone</a></li>
+		<li class=""><a href="/pages/appliances.html">Appliances</a></li>
+		<li class=""><a href="/pages/home-life.html">Home Life</a></li>
+		<li class=""><a href="/pages/commuting.html">Commuting</a></li>
+		<li class=""><a href="/pages/energy.html">Energy</a></li>
+	</ul>
+	<ul class="nav nav-sidebar">
+		<li class="sidebar-label">More</li>
+		<li class=""><a href="/pages/export.html">Export</a></li>
+		<li class=""><a href="/pages/protest.html">Protest</a></li>
+		<li class=""><a href="/pages/faq.html">FAQ</a></li>
+	</ul>
+</div>
+
+
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header">Analysis</h1>
+
+				<div class="row">
+	<div class="col-sm-6">
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="radar" style="width:100%; height:400px;"></div>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('radar'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {},
+            legend: {
+                
+            },
+            toolbox: {
+                feature: {
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            radar: {
+        // shape: 'circle',
+        indicator: [
+        { name: 'Architecture', max: 100},
+        { name: 'Market Appeal', max: 100},
+        { name: 'Engineering', max: 100},
+        { name: 'Communications', max: 100},
+        { name: 'Innovation', max: 100},
+        { name: 'Comfort Zone', max: 100},
+        { name: 'Appliances', max: 100},
+        { name: 'Home Life', max: 100},
+        { name: 'Commuting', max: 100},
+        { name: 'Energy', max: 100}
+        ]
+    },
+    series: [{
+        name: 'Scores',
+        type: 'radar',
+        // areaStyle: {normal: {}},
+        data: [
+        {
+            name : 'TJU-TUDA',
+            value : [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            label: {
+                normal: {
+                    show: true
+                }
+            }
+        }
+        ]
+    }]
+};
+
+
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+</script>
+	</div>
+
+	<div class="col-sm-6">
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="pie" style="width:100%; height:400px;"></div>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('pie'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {c} ({d}%)"
+            },
+            toolbox: {
+                feature: {
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            legend: {
+                orient: 'vertical',
+                x: 'left',
+                data:['Architecture', 'Market Appeal','Engineering','Communications','Innovation', 'Comfort Zone', 'Appliances', 'Home Life', 'Commuting', 'Energy']
+            },
+            series: [
+            {
+                name:'TJU-TUDA',
+                type:'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '20'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                {value:Math.floor(Math.random()*50+50), name:'Architecture'},
+                {value:Math.floor(Math.random()*50+50), name:'Market Appeal'},
+                {value:Math.floor(Math.random()*50+50), name:'Engineering'},
+                {value:Math.floor(Math.random()*50+50), name:'Communications'},
+                {value:Math.floor(Math.random()*50+50), name:'Innovation'},
+                {value:Math.floor(Math.random()*50+50), name:'Comfort Zone'},
+                {value:Math.floor(Math.random()*50+50), name:'Appliances'},
+                {value:Math.floor(Math.random()*50+50), name:'Home Life'},
+                {value:Math.floor(Math.random()*50+50), name:'Commuting'},
+                {value:Math.floor(Math.random()*50+50), name:'Energy'}
+                ]
+            }
+            ]
+        };
+
+
+
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+</script>
+	</div>
+</div>
+
+<hr>
+
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="boxplot" style="width:100%; height:500px;"></div>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('boxplot'));
+
+        
+        var data = echarts.dataTool.prepareBoxplotData([
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)]
+            ]);
+
+        option = {
+            title: [
+            {
+                text: 'Upper: Q3 + 1.5 * IRQ \nLower: Q1 - 1.5 * IRQ',
+                borderColor: '#999',
+                borderWidth: 1,
+                textStyle: {
+                    fontSize: 14
+                },
+                left: '10%',
+                bottom: 0
+            }
+            ],
+            toolbox: {
+                feature: {
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            grid: {
+                left: '10%',
+                right: '10%',
+                bottom: '15%'
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Architecture', 'Market Appeal','Engineering','Communications','Innovation', 'Comfort Zone', 'Appliances', 'Home Life', 'Commuting', 'Energy'],
+                boundaryGap: true,
+                splitArea: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: 'Points',
+                splitArea: {
+                    show: true
+                }
+            },
+            series: [
+            {
+                name: 'boxplot',
+                type: 'boxplot',
+                data: data.boxData,
+                tooltip: {
+                    formatter: function (param) {
+                        return [
+                        param.name,
+                        'Upper: ' + param.data[5],
+                        'Q3: ' + param.data[4],
+                        'Median: ' + param.data[3],
+                        'Q1: ' + param.data[2],
+                        'Lower: ' + param.data[1]
+                        ].join('<br/>')
+                    }
+                }
+            },
+            {
+                name: 'outlier',
+                type: 'scatter',
+                data: data.outliers
+            }
+            ]
+        };
+
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+</script>
+
+
+				<hr>
+<footer class="small">
+	<span>&copy;</span>
+	<span><script type="text/javascript">document.write(new Date().getFullYear());</script></span>
+	Solar Decathlon China. All Rights Reserved.
+</footer>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

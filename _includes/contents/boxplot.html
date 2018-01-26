@@ -1,0 +1,98 @@
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="boxplot" style="width:100%; height:500px;"></div>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('boxplot'));
+
+        
+        var data = echarts.dataTool.prepareBoxplotData([
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)]
+            ]);
+
+        option = {
+            title: [
+            {
+                text: 'Upper: Q3 + 1.5 * IRQ \nLower: Q1 - 1.5 * IRQ',
+                borderColor: '#999',
+                borderWidth: 1,
+                textStyle: {
+                    fontSize: 14
+                },
+                left: '10%',
+                bottom: 0
+            }
+            ],
+            toolbox: {
+                feature: {
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            grid: {
+                left: '10%',
+                right: '10%',
+                bottom: '15%'
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Architecture', 'Market Appeal','Engineering','Communications','Innovation', 'Comfort Zone', 'Appliances', 'Home Life', 'Commuting', 'Energy'],
+                boundaryGap: true,
+                splitArea: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: 'Points',
+                splitArea: {
+                    show: true
+                }
+            },
+            series: [
+            {
+                name: 'boxplot',
+                type: 'boxplot',
+                data: data.boxData,
+                tooltip: {
+                    formatter: function (param) {
+                        return [
+                        param.name,
+                        'Upper: ' + param.data[5],
+                        'Q3: ' + param.data[4],
+                        'Median: ' + param.data[3],
+                        'Q1: ' + param.data[2],
+                        'Lower: ' + param.data[1]
+                        ].join('<br/>')
+                    }
+                }
+            },
+            {
+                name: 'outlier',
+                type: 'scatter',
+                data: data.outliers
+            }
+            ]
+        };
+
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+</script>

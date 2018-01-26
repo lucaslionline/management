@@ -1,0 +1,56 @@
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="radar" style="width:100%; height:400px;"></div>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('radar'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {},
+            legend: {
+                
+            },
+            toolbox: {
+                feature: {
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            radar: {
+        // shape: 'circle',
+        indicator: [
+        { name: 'Architecture', max: 100},
+        { name: 'Market Appeal', max: 100},
+        { name: 'Engineering', max: 100},
+        { name: 'Communications', max: 100},
+        { name: 'Innovation', max: 100},
+        { name: 'Comfort Zone', max: 100},
+        { name: 'Appliances', max: 100},
+        { name: 'Home Life', max: 100},
+        { name: 'Commuting', max: 100},
+        { name: 'Energy', max: 100}
+        ]
+    },
+    series: [{
+        name: 'Scores',
+        type: 'radar',
+        // areaStyle: {normal: {}},
+        data: [
+        {
+            name : 'TJU-TUDA',
+            value : [Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50), Math.floor(Math.random()*50+50)],
+            label: {
+                normal: {
+                    show: true
+                }
+            }
+        }
+        ]
+    }]
+};
+
+
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+</script>

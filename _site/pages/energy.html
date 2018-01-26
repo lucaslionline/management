@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+
+	<title>SDC 2018 | Energy</title>
+	
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
+	<script src="/assets/js/jquery-1.11.3.js"></script>
+	<script src="/assets/js/bootstrap.js"></script>
+	<script src="/assets/js/echarts.js"></script>
+	<script src="/assets/js/dataTool.js"></script>
+</head>
+
+</head>
+
+<body>
+	<header>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<img class="navbar-brand" src="/assets/img/sdc_logo_landscape.png">
+				<a class="navbar-brand" href="/">Solar Decathlon China</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Team TJU-TUDA <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="/pages/profile.html">Profile</a></li><li><a href="/">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+				<form class="navbar-form navbar-right">
+					<input type="text" class="form-control" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+	<ul class="nav nav-sidebar">
+		<li class="sidebar-label">Dashboard</li>
+		<li class=""><a href="/pages/overview.html">Overview</a></li>
+		<li class=""><a href="/pages/standing.html">Standing</a></li>
+		<li class=""><a href="/pages/analysis.html">Analysis</a></li>
+		<li class=""><a href="/pages/announcements.html">Announcements</a></li>
+		<li class=""><a href="/pages/documents.html">Documents</a></li>
+		<li class=""><a href="/pages/deliverables.html">Deliverables</a></li>
+	</ul>
+
+
+	<ul class="nav nav-sidebar">
+		<li class="sidebar-label">Contests</li>
+		<li class=""><a href="/pages/architecture.html">Architecture</a></li>
+		<li class=""><a href="/pages/market-appeal.html">Market Appeal</a></li>
+		<li class=""><a href="/pages/engineering.html">Engineering</a></li>
+		<li class=""><a href="/pages/communications.html">Communications</a></li>
+		<li class=""><a href="/pages/innovation.html">Innovation</a></li>
+		<li class=""><a href="/pages/comfort-zone.html">Comfort Zone</a></li>
+		<li class=""><a href="/pages/appliances.html">Appliances</a></li>
+		<li class=""><a href="/pages/home-life.html">Home Life</a></li>
+		<li class=""><a href="/pages/commuting.html">Commuting</a></li>
+		<li class="active"><a href="/pages/energy.html">Energy</a></li>
+	</ul>
+	<ul class="nav nav-sidebar">
+		<li class="sidebar-label">More</li>
+		<li class=""><a href="/pages/export.html">Export</a></li>
+		<li class=""><a href="/pages/protest.html">Protest</a></li>
+		<li class=""><a href="/pages/faq.html">FAQ</a></li>
+	</ul>
+</div>
+
+
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header">Energy</h1>
+
+				<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="standing" style="width:100%; height:500px;"></div>
+
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('standing'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'Energy Contest Scores',
+                left: 'center'
+            },
+        	tooltip : {
+        		trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+    	data:['Energy Balance', 'Generating Capacity'],
+        bottom: 0
+    },
+    toolbox: {
+    	show: true,
+        bottom: 0,
+    	feature: {
+    		mark: {show: true},
+    		dataView: {show: true, readOnly: false},
+    		magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+    		restore: {show: true},
+    		saveAsImage: {show: true}
+    	}
+    },
+    calculable : true,
+    xAxis: [
+    {
+    	type: 'value',
+        name: 'Points'
+    }
+    ],
+    yAxis: [
+    {
+    	type: 'category',
+        name: 'Team',
+    	data: ['HKU','PKU*','THU','XJTU-WNEU','YI','WashU-BLD*','Istanbul', 'SUES-XD', 'Shunya', 'Montreal', 'JIA+', 'NJFJ', 'TUBSEU', 'XAUAT', 'SJTUIUC', 'BJTU', 'SIE', 'TJU-TUDA', 'Solar Offspring', 'SCUT-POLITO', 'UNNC Alpha', 'Israel']
+    }
+    ],
+    series: [
+    {
+    	name:'Energy Balance',
+    	type:'bar',
+    	stack: 'Total',
+    	itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+    	data:[Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80), Math.floor(Math.random()*80)]
+    },
+    {
+    	name:'Generating Capacity',
+    	type:'bar',
+    	stack: 'Total',
+    	itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+    	data:[Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20), Math.floor(Math.random()*20)]
+    }
+    ]
+};
+
+
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+</script>
+
+
+<h3 class="sub-header">Energy Balance (80%)</h3>
+Line chart similar to the Temparature Measurements.
+
+
+<h3 class="sub-header">Generating Capacity (20%)</h3>
+Line chart similar to the Temparature Measurements.
+
+				<hr>
+<footer class="small">
+	<span>&copy;</span>
+	<span><script type="text/javascript">document.write(new Date().getFullYear());</script></span>
+	Solar Decathlon China. All Rights Reserved.
+</footer>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
