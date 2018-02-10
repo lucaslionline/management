@@ -13,8 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
 
-	<script src="/assets/js/jquery-1.11.3.js"></script>
-	<script src="/assets/js/bootstrap.js"></script>
+	
 	<script src="/assets/js/echarts.js"></script>
 	<script src="/assets/js/dataTool.js"></script>
 </head>
@@ -41,7 +40,8 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Team TJU-TUDA <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="/pages/profile.html">Profile</a></li><li><a href="/">Logout</a></li>
+							<li><a href="/pages/profile.html"><span data-feather="settings"></span>Settings</a></li>
+							<li><a href="/"><span data-feather="log-out"></span>Sign out</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -58,35 +58,52 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 	<ul class="nav nav-sidebar">
-		<li class="sidebar-label">Dashboard</li>
-		<li class=""><a href="/pages/overview.html">Overview</a></li>
-		<li class=""><a href="/pages/standing.html">Standing</a></li>
-		<li class=""><a href="/pages/analysis.html">Analysis</a></li>
-		<li class=""><a href="/pages/announcements.html">Announcements</a></li>
-		<li class=""><a href="/pages/documents.html">Documents</a></li>
-		<li class=""><a href="/pages/deliverables.html">Deliverables</a></li>
+		<li class=""><a href="/pages/overview.html"><span data-feather="clock"></span>Dashboard</a></li>
+		<li class=""><a href="/pages/standing.html"><span data-feather="trending-up"></span>Standing</a></li>
+		<li class=""><a href="/pages/analysis.html"><span data-feather="pie-chart"></span>Analysis</a></li>
+		<li class=""><a href="/pages/announcements.html"><span data-feather="rss"></span>Announcements</a></li>
+		<li class=""><a href="/pages/documents.html"><span data-feather="file-text"></span>Documents</a></li>
+		<li class=""><a href="/pages/deliverables.html"><span data-feather="upload"></span>Deliverables</a></li>
 	</ul>
 
 
 	<ul class="nav nav-sidebar">
 		<li class="sidebar-label">Contests</li>
-		<li class=""><a href="/pages/architecture.html">Architecture</a></li>
-		<li class=""><a href="/pages/market-appeal.html">Market Appeal</a></li>
-		<li class=""><a href="/pages/engineering.html">Engineering</a></li>
-		<li class=""><a href="/pages/communications.html">Communications</a></li>
-		<li class=""><a href="/pages/innovation.html">Innovation</a></li>
-		<li class=""><a href="/pages/comfort-zone.html">Comfort Zone</a></li>
-		<li class=""><a href="/pages/appliances.html">Appliances</a></li>
-		<li class=""><a href="/pages/home-life.html">Home Life</a></li>
-		<li class=""><a href="/pages/commuting.html">Commuting</a></li>
-		<li class=""><a href="/pages/energy.html">Energy</a></li>
+		<li class=""><a href="/pages/architecture.html"><span data-feather="home"></span>Architecture</a></li>
+		<li class=""><a href="/pages/market-appeal.html"><span data-feather="dollar-sign"></span>Market Appeal</a></li>
+		<li class=""><a href="/pages/engineering.html"><span data-feather="code"></span>Engineering</a></li>
+		<li class=""><a href="/pages/communications.html"><span data-feather="share-2"></span>Communications</a></li>
+		<li class=""><a href="/pages/innovation.html"><span data-feather="loader"></span>Innovation</a></li>
+		<li class=""><a href="/pages/comfort-zone.html"><span data-feather="thermometer"></span>Comfort Zone</a></li>
+		<li class=""><a href="/pages/appliances.html"><span data-feather="monitor"></span>Appliances</a></li>
+		<li class=""><a href="/pages/home-life.html"><span data-feather="tv"></span>Home Life</a></li>
+		<li class=""><a href="/pages/commuting.html"><span data-feather="truck"></span>Commuting</a></li>
+		<li class=""><a href="/pages/energy.html"><span data-feather="activity"></span>Energy</a></li>
 	</ul>
 	<ul class="nav nav-sidebar">
 		<li class="sidebar-label">More</li>
-		<li class=""><a href="/pages/export.html">Export</a></li>
-		<li class="active"><a href="/pages/protest.html">Protest</a></li>
-		<li class=""><a href="/pages/faq.html">FAQ</a></li>
+		<li class=""><a href="/pages/export.html"><span data-feather="external-link"></span>Export</a></li>
+		<li class="active"><a href="/pages/protest.html"><span data-feather="shield"></span>Protest</a></li>
+		<li class=""><a href="/pages/faq.html"><span data-feather="help-circle"></span>FAQ</a></li>
 	</ul>
+
+
+	<hr>
+<footer class="small gray">
+	<span>&copy;</span>
+	<span><script type="text/javascript">document.write(new Date().getFullYear());</script></span>
+	Solar Decathlon China.
+</footer>
+
+
+<script src="/assets/js/jquery-3.2.1.slim.min.js"></script>
+<script src="/assets/js/jquery-1.11.3.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/feather.min.js"></script>
+<script>
+feather.replace()
+</script>
 </div>
 
 
@@ -122,24 +139,6 @@
 				<td>nec</td>
 				<td>odio</td>
 			</tr>
-			<tr>
-				<td>03</td>
-				<td>libero</td>
-				<td>Sed</td>
-				<td>cursus</td>
-			</tr>
-			<tr>
-				<td>04</td>
-				<td>dapibus</td>
-				<td>diam</td>
-				<td>Sed</td>
-			</tr>
-			<tr>
-				<td>05</td>
-				<td>Nulla</td>
-				<td>quis</td>
-				<td>sem</td>
-			</tr>
 		</tbody>
 	</table>
 </div>
@@ -155,13 +154,6 @@
 		<button class="btn btn-sm btn-primary" type="submit">Submit</button>
 	</form>
 </div>
-
-				<hr>
-<footer class="small">
-	<span>&copy;</span>
-	<span><script type="text/javascript">document.write(new Date().getFullYear());</script></span>
-	Solar Decathlon China. All Rights Reserved.
-</footer>
 			</div>
 		</div>
 	</div>

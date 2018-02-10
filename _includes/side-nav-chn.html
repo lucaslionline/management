@@ -1,0 +1,34 @@
+<div class="col-sm-3 col-md-2 sidebar">
+	<ul class="nav nav-sidebar">
+		<li class="{% if page.url contains 'overview' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/overview.html"><span data-feather="clock"></span>仪表盘</a></li>
+		<li class="{% if page.url contains 'standing' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/standing.html"><span data-feather="trending-up"></span>排名</a></li>
+		<li class="{% if page.url contains 'analysis' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/analysis.html"><span data-feather="pie-chart"></span>分析</a></li>
+		<li class="{% if page.url contains 'announcements' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/announcements.html"><span data-feather="rss"></span>公告</a></li>
+		<li class="{% if page.url contains 'documents' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/documents.html"><span data-feather="file-text"></span>文档</a></li>
+		<li class="{% if page.url contains 'deliverables' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/deliverables.html"><span data-feather="upload"></span>提交物</a></li>
+	</ul>
+
+
+	<ul class="nav nav-sidebar">
+		<li class="sidebar-label">竞赛</li>
+		<li class="{% if page.url contains 'architecture' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/architecture.html"><span data-feather="home"></span>建筑设计</a></li>
+		<li class="{% if page.url contains 'market-appeal' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/market-appeal.html"><span data-feather="dollar-sign"></span>市场潜力</a></li>
+		<li class="{% if page.url contains 'engineering' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/engineering.html"><span data-feather="code"></span>工程设计</a></li>
+		<li class="{% if page.url contains 'communications' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/communications.html"><span data-feather="share-2"></span>宣传推广</a></li>
+		<li class="{% if page.url contains 'innovation' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/innovation.html"><span data-feather="loader"></span>创新能力</a></li>
+		<li class="{% if page.url contains 'comfort-zone' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/comfort-zone.html"><span data-feather="thermometer"></span>舒适程度</a></li>
+		<li class="{% if page.url contains 'appliances' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/appliances.html"><span data-feather="monitor"></span>家用电器</a></li>
+		<li class="{% if page.url contains 'home-life' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/home-life.html"><span data-feather="tv"></span>居家生活</a></li>
+		<li class="{% if page.url contains 'commuting' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/commuting.html"><span data-feather="truck"></span>电动通勤</a></li>
+		<li class="{% if page.url contains 'energy' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/energy.html"><span data-feather="activity"></span>能源绩效</a></li>
+	</ul>
+	<ul class="nav nav-sidebar">
+		<li class="sidebar-label">更多</li>
+		<li class="{% if page.url contains 'export' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/export.html"><span data-feather="external-link"></span>导出</a></li>
+		<li class="{% if page.url contains 'protest' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/protest.html"><span data-feather="shield"></span>申诉</a></li>
+		<li class="{% if page.url contains 'faq' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/faq.html"><span data-feather="help-circle"></span>常见问题</a></li>
+	</ul>
+
+
+	{% include footer.html %}
+</div>

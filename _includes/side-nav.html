@@ -1,32 +1,34 @@
 <div class="col-sm-3 col-md-2 sidebar">
 	<ul class="nav nav-sidebar">
-		<li class="sidebar-label">Dashboard</li>
-		<li class="{% if page.url contains 'overview' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/overview.html">Overview</a></li>
-		<li class="{% if page.url contains 'standing' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/standing.html">Standing</a></li>
-		<li class="{% if page.url contains 'analysis' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/analysis.html">Analysis</a></li>
-		<li class="{% if page.url contains 'announcements' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/announcements.html">Announcements</a></li>
-		<li class="{% if page.url contains 'documents' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/documents.html">Documents</a></li>
-		<li class="{% if page.url contains 'deliverables' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/deliverables.html">Deliverables</a></li>
+		<li class="{% if page.url contains 'overview' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/overview.html"><span data-feather="clock"></span>Dashboard</a></li>
+		<li class="{% if page.url contains 'standing' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/standing.html"><span data-feather="trending-up"></span>Standing</a></li>
+		<li class="{% if page.url contains 'analysis' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/analysis.html"><span data-feather="pie-chart"></span>Analysis</a></li>
+		<li class="{% if page.url contains 'announcements' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/announcements.html"><span data-feather="rss"></span>Announcements</a></li>
+		<li class="{% if page.url contains 'documents' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/documents.html"><span data-feather="file-text"></span>Documents</a></li>
+		<li class="{% if page.url contains 'deliverables' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/deliverables.html"><span data-feather="upload"></span>Deliverables</a></li>
 	</ul>
 
 
 	<ul class="nav nav-sidebar">
 		<li class="sidebar-label">Contests</li>
-		<li class="{% if page.url contains 'architecture' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/architecture.html">Architecture</a></li>
-		<li class="{% if page.url contains 'market-appeal' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/market-appeal.html">Market Appeal</a></li>
-		<li class="{% if page.url contains 'engineering' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/engineering.html">Engineering</a></li>
-		<li class="{% if page.url contains 'communications' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/communications.html">Communications</a></li>
-		<li class="{% if page.url contains 'innovation' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/innovation.html">Innovation</a></li>
-		<li class="{% if page.url contains 'comfort-zone' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/comfort-zone.html">Comfort Zone</a></li>
-		<li class="{% if page.url contains 'appliances' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/appliances.html">Appliances</a></li>
-		<li class="{% if page.url contains 'home-life' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/home-life.html">Home Life</a></li>
-		<li class="{% if page.url contains 'commuting' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/commuting.html">Commuting</a></li>
-		<li class="{% if page.url contains 'energy' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/energy.html">Energy</a></li>
+		<li class="{% if page.url contains 'architecture' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/architecture.html"><span data-feather="home"></span>Architecture</a></li>
+		<li class="{% if page.url contains 'market-appeal' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/market-appeal.html"><span data-feather="dollar-sign"></span>Market Appeal</a></li>
+		<li class="{% if page.url contains 'engineering' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/engineering.html"><span data-feather="code"></span>Engineering</a></li>
+		<li class="{% if page.url contains 'communications' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/communications.html"><span data-feather="share-2"></span>Communications</a></li>
+		<li class="{% if page.url contains 'innovation' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/innovation.html"><span data-feather="loader"></span>Innovation</a></li>
+		<li class="{% if page.url contains 'comfort-zone' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/comfort-zone.html"><span data-feather="thermometer"></span>Comfort Zone</a></li>
+		<li class="{% if page.url contains 'appliances' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/appliances.html"><span data-feather="monitor"></span>Appliances</a></li>
+		<li class="{% if page.url contains 'home-life' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/home-life.html"><span data-feather="tv"></span>Home Life</a></li>
+		<li class="{% if page.url contains 'commuting' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/commuting.html"><span data-feather="truck"></span>Commuting</a></li>
+		<li class="{% if page.url contains 'energy' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/energy.html"><span data-feather="activity"></span>Energy</a></li>
 	</ul>
 	<ul class="nav nav-sidebar">
 		<li class="sidebar-label">More</li>
-		<li class="{% if page.url contains 'export' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/export.html">Export</a></li>
-		<li class="{% if page.url contains 'protest' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/protest.html">Protest</a></li>
-		<li class="{% if page.url contains 'faq' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/faq.html">FAQ</a></li>
+		<li class="{% if page.url contains 'export' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/export.html"><span data-feather="external-link"></span>Export</a></li>
+		<li class="{% if page.url contains 'protest' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/protest.html"><span data-feather="shield"></span>Protest</a></li>
+		<li class="{% if page.url contains 'faq' %}active{% endif %}"><a href="{{ site.baseurl }}/pages/faq.html"><span data-feather="help-circle"></span>FAQ</a></li>
 	</ul>
+
+
+	{% include footer.html %}
 </div>
