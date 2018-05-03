@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 
-	<title>SDC 2018 | Announcements</title>
+	<title>SDC 2018 | Penalty</title>
 	
 	<link rel="stylesheet" type="text/css" href="/management/assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/management/assets/css/dashboard.css">
@@ -61,7 +61,7 @@
 		<li class=""><a href="/management/pages/overview.html"><span data-feather="clock"></span>Dashboard</a></li>
 		<li class=""><a href="/management/pages/standing.html"><span data-feather="trending-up"></span>Standing</a></li>
 		<li class=""><a href="/management/pages/analysis.html"><span data-feather="pie-chart"></span>Analysis</a></li>
-		<li class="active"><a href="/management/pages/announcements.html"><span data-feather="rss"></span>Announcements</a></li>
+		<li class=""><a href="/management/pages/announcements.html"><span data-feather="rss"></span>Announcements</a></li>
 		<li class=""><a href="/management/pages/documents.html"><span data-feather="file-text"></span>Documents</a></li>
 		<li class=""><a href="/management/pages/deliverables.html"><span data-feather="upload"></span>Deliverables</a></li>
 	</ul>
@@ -83,7 +83,7 @@
 	<ul class="nav nav-sidebar">
 		<li class="sidebar-label">More</li>
 		<li class=""><a href="/management/pages/export.html"><span data-feather="external-link"></span>Export</a></li>
-		<li class=""><a href="/management/pages/penalty.html"><span data-feather="circle"></span>Penalty</a></li>
+		<li class="active"><a href="/management/pages/penalty.html"><span data-feather="circle"></span>Penalty</a></li>
 		<li class=""><a href="/management/pages/protest.html"><span data-feather="shield"></span>Protest</a></li>
 		<li class=""><a href="/management/pages/faq.html"><span data-feather="help-circle"></span>FAQ</a></li>
 	</ul>
@@ -109,49 +109,36 @@ feather.replace()
 
 
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<h1 class="page-header">Announcements <span class="chn">/ 公告</span></h1>
+				<h1 class="page-header">Penalty <span class="chn">/ 罚分</span></h1>
 
 <div class="table-responsive">
 	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>#</th>
-				<th>Title</th>
-				<th>Date Posted</th>
-				<th>Posted By</th>
-				<th>Action</th>
+				<th>Penalty Point</th>
+				<th>Description</th>
+				<th>Result</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td>03</td>
-				<td><a href="">Call for Jury Committee Nominations</a></td>
-				<td>06 Jun 2017</td>
-				<td>Lucas</td>
-				<td>
-					<button class="btn btn-xs btn-primary">Edit</button>
-					<button class="btn btn-xs btn-primary">Delete</button>
-				</td>
+				<td>01</td>
+				<td>Lorem</td>
+				<td>ipsum</td>
+				<td>dolor</td>
 			</tr>
 			<tr>
 				<td>02</td>
-				<td><a href="">Regulations on Soil Disturbance</a></td>
-				<td>23 Mar 2017</td>
-				<td>Lucas</td>
-				<td>
-					<button class="btn btn-xs btn-primary">Edit</button>
-					<button class="btn btn-xs btn-primary">Delete</button>
-				</td>
+				<td>amet</td>
+				<td>consectetur</td>
+				<td>adipiscing</td>
 			</tr>
 			<tr>
-				<td>01</td>
-				<td><a href="">Notification of Postponement</a></td>
-				<td>29 Dec 2016</td>
-				<td>Lucas</td>
-				<td>
-					<button class="btn btn-xs btn-primary">Edit</button>
-					<button class="btn btn-xs btn-primary">Delete</button>
-				</td>
+				<td>03</td>
+				<td>Integer</td>
+				<td>nec</td>
+				<td>odio</td>
 			</tr>
 		</tbody>
 	</table>
@@ -159,8 +146,15 @@ feather.replace()
 
 
 <hr>
-<button class="btn btn-sm btn-primary">Post an Announcement</button>
-
+<div class="well">
+	<form>
+		<input type="text" class="form-control" placeholder="Penalty Point" required>
+		<br>
+		<textarea class="form-control" placeholder="Description" rows="6" required></textarea>
+		<br>
+		<button class="btn btn-sm btn-primary" type="submit">Post</button>
+	</form>
+</div>
 			</div>
 		</div>
 	</div>
