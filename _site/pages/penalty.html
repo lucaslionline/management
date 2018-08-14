@@ -109,16 +109,17 @@ feather.replace()
 
 
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<h1 class="page-header">Penalty <span class="chn">/ 罚分</span></h1>
+				<h1 class="page-header">Penalty</h1>
 
 <div class="table-responsive">
 	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>#</th>
+				<th>Violation or Cheating</th>
 				<th>Penalty Point</th>
-				<th>Description</th>
-				<th>Result</th>
+				<th>Infraction Description</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -126,19 +127,21 @@ feather.replace()
 				<td>01</td>
 				<td>Lorem</td>
 				<td>ipsum</td>
-				<td>dolor</td>
+				<td>Lorem</td>
+				<td>
+					<button class="btn btn-xs btn-primary">Edit</button>
+					<button class="btn btn-xs btn-primary">Delete</button>
+				</td>
 			</tr>
 			<tr>
 				<td>02</td>
 				<td>amet</td>
 				<td>consectetur</td>
-				<td>adipiscing</td>
-			</tr>
-			<tr>
-				<td>03</td>
-				<td>Integer</td>
-				<td>nec</td>
-				<td>odio</td>
+				<td>Lorem</td>
+				<td>
+					<button class="btn btn-xs btn-primary">Edit</button>
+					<button class="btn btn-xs btn-primary">Delete</button>
+				</td>
 			</tr>
 		</tbody>
 	</table>
@@ -148,6 +151,8 @@ feather.replace()
 <hr>
 <div class="well">
 	<form>
+		<input type="text" class="form-control" placeholder="Violation or Cheating" required>
+		<br>
 		<input type="text" class="form-control" placeholder="Penalty Point" required>
 		<br>
 		<textarea class="form-control" placeholder="Description" rows="6" required></textarea>
